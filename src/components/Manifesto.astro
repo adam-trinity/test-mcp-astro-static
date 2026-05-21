@@ -1,0 +1,102 @@
+<section class="manifesto page-shell">
+  <div class="content-shell">
+    <div class="manifesto-shell inner-shell">
+    <p class="manifesto-index">¶ 03</p>
+
+    <div class="manifesto-body">
+      <p>
+        We're a studio of <em>seven</em>. We take on <em>eight</em> projects a year. We do the work
+        ourselves. No juniors learning on your dollar, no offshore production layer.
+      </p>
+      <p>
+        We move slow on the parts that matter and fast on the parts that do not. It's not for everyone.
+        We do not think it should be.
+      </p>
+    </div>
+
+    <div class="manifesto-sign">
+      <p class="manifesto-name">- Anya Park</p>
+      <p>Founder and Creative Director, Halflight, est. 2019</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .manifesto {
+    padding-top: clamp(72px, 10vw, 140px);
+  }
+
+  .manifesto-shell {
+    display: grid;
+    gap: 28px;
+  }
+
+  .manifesto-index {
+    color: var(--color-accent);
+    font-family: var(--font-serif);
+    font-size: clamp(40px, 8vw, 56px);
+    font-style: italic;
+    line-height: 1;
+  }
+
+  .manifesto-body {
+    display: grid;
+    gap: 23.3px;
+    max-width: 840px;
+  }
+
+  .manifesto-body p {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 4.2vw, 52px);
+    letter-spacing: -0.78px;
+    line-height: clamp(34px, 5.2vw, 59.8px);
+    margin: 0;
+  }
+
+  .manifesto-body em {
+    color: var(--color-accent);
+    font-style: italic;
+  }
+
+  .manifesto-sign {
+    color: var(--color-muted);
+    justify-self: end;
+    max-width: 200px;
+    text-align: right;
+  }
+
+  .manifesto-name {
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-style: italic;
+    line-height: 33px;
+    margin-bottom: 4px;
+  }
+
+  .manifesto-sign p {
+    font-size: 13px;
+    line-height: 19.5px;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .manifesto-body p {
+      font-size: clamp(34px, 4.4vw, 52px);
+      line-height: clamp(42px, 5vw, 59.8px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .manifesto-shell {
+      align-items: start;
+      grid-template-columns: 200px minmax(0, 1fr) 220px;
+    }
+
+    .manifesto-body p {
+      font-size: 52px;
+      line-height: 59.8px;
+    }
+  }
+</style>

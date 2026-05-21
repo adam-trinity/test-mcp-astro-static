@@ -1,0 +1,160 @@
+---
+const studioLinks = ["About", "Team", "Approach", "Press"];
+const workLinks = ["Selected", "Archive", "Recognition"];
+const elsewhereLinks = ["Instagram", "Are.na", "Read.cv", "Newsletter"];
+---
+
+<footer class="site-footer page-shell">
+  <div class="content-shell">
+    <div class="footer-shell inner-shell">
+      <div class="footer-cta">
+        <h2>
+          Have a brief?<br />
+          <em>Or just a feeling about</em><br />
+          something? <a href="#">Tell us -&gt;</a>
+        </h2>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col footer-about">
+          <p class="eyebrow">Halflight</p>
+          <p>An independent studio for brands that move. We work in seasons, not sprints.</p>
+        </div>
+
+        <div class="footer-col">
+          <p class="eyebrow">Studio</p>
+          <ul>
+            {studioLinks.map((item) => (
+              <li><a href="#">{item}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="eyebrow">Work</p>
+          <ul>
+            {workLinks.map((item) => (
+              <li><a href="#">{item}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="eyebrow">Elsewhere</p>
+          <ul>
+            {elsewhereLinks.map((item) => (
+              <li><a href="#">{item}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        <p>Copyright Halflight Studio, MMXXVI. All rights reserved.</p>
+        <p>02:33 EST - Brooklyn, NY</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-ink);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    color: var(--color-cream);
+    margin-top: 60px;
+    padding: 120px 0 32px;
+  }
+
+  .footer-shell {
+    display: grid;
+    gap: 0;
+  }
+
+  .footer-cta h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(56px, 10vw, 160px);
+    font-weight: 400;
+    letter-spacing: -4.8px;
+    line-height: 152px;
+    margin: 0;
+    min-height: 536px;
+  }
+
+  .footer-cta em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .footer-cta a {
+    color: var(--color-accent);
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 10px;
+  }
+
+  .footer-links {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    gap: 24px 60px;
+    min-height: 221.5px;
+    padding: 0 0 61px;
+  }
+
+  .footer-col {
+    display: grid;
+    gap: 16px;
+  }
+
+  .footer-col .eyebrow {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-col p,
+  .footer-col li,
+  .footer-meta {
+    font-size: 15px;
+    line-height: 22.5px;
+  }
+
+  .footer-about p:last-child {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-style: italic;
+    line-height: 28.6px;
+    max-width: 360px;
+  }
+
+  .footer-col ul {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-meta {
+    color: rgba(255, 255, 255, 0.4);
+    display: grid;
+    gap: 8px;
+    padding-top: 32px;
+  }
+
+  .footer-meta p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  @media (min-width: 768px) {
+    .footer-links {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+
+    .footer-meta {
+      align-items: center;
+      grid-template-columns: 1fr auto;
+    }
+  }
+</style>

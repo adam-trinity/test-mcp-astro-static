@@ -1,0 +1,300 @@
+---
+const cases = [
+  { index: "01", category: "Identity", title: "Aether", year: "2024", tone: "serif" },
+  { index: "02", category: "Brand", title: "new wave", year: "2023", tone: "sans" },
+  { index: "03", category: "Digital", title: "F O R M", year: "2024", tone: "mono" },
+  { index: "04", category: "Identity", title: "LUNA HOTELS", year: "2025", tone: "serif-up" },
+  { index: "05", category: "Editorial", title: "OBJECT", year: "2022", tone: "sans-up" },
+  { index: "06", category: "Digital", title: "parallel", year: "2025", tone: "sans" },
+  { index: "07", category: "Identity", title: "cyan&co", year: "2023", tone: "serif-script" },
+  { index: "08", category: "Brand", title: "BLOCK\nCITY", year: "2024", tone: "mono-up" },
+  { index: "09", category: "Identity", title: "▲ Meridian", year: "2025", tone: "sans" },
+  { index: "10", category: "Editorial", title: "Oak & Alder", year: "2022", tone: "serif" },
+];
+
+const marqueeItems = ["Identity systems", "Digital products", "Editorial design", "Custom type"];
+---
+
+<section class="logo-cloud page-shell">
+  <div class="content-shell">
+    <div class="logo-shell inner-shell">
+    <div class="logo-head">
+      <h2>Built with founders, operators, and the occasional museum.</h2>
+      <div class="logo-note">
+        <p class="eyebrow">Index 02 / Selected clients</p>
+        <p>A partial list. Fifty-some more in the archive, including NDA projects we can show in person.</p>
+      </div>
+    </div>
+
+    <div class="case-grid">
+      {cases.map((item) => (
+        <a href="#" class="case-card">
+          <p class="eyebrow case-meta">{item.index} / {item.category}</p>
+          <p class={`case-title ${item.tone}`}>{item.title}</p>
+          <div class="case-foot">
+            <span class="eyebrow">{item.year}</span>
+            <span class="eyebrow case-link">View case -&gt;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="marquee" aria-label="Services marquee">
+      <div class="marquee-track">
+        <span class="marquee-segment">
+          {marqueeItems.map((item) => (
+            <span class="marquee-part">
+              <span>{item}</span>
+              <span class="marquee-sep">✦</span>
+            </span>
+          ))}
+        </span>
+        <span class="marquee-segment" aria-hidden="true">
+          {marqueeItems.map((item) => (
+            <span class="marquee-part">
+              <span>{item}</span>
+              <span class="marquee-sep">✦</span>
+            </span>
+          ))}
+        </span>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .logo-cloud {
+    padding-top: 40px;
+  }
+
+  .logo-shell {
+    display: grid;
+    gap: 60px;
+  }
+
+  .logo-head {
+    display: grid;
+    gap: 20px;
+  }
+
+  .logo-head h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(48px, 8vw, 72px);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -1.44px;
+    line-height: 68.4px;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .logo-note {
+    color: var(--color-muted);
+    display: grid;
+    gap: 8px;
+    justify-self: end;
+    max-width: 280px;
+    text-align: right;
+  }
+
+  .logo-note p {
+    font-size: 15px;
+    line-height: 21px;
+    margin: 0;
+  }
+
+  .case-grid {
+    border-left: 1px solid var(--color-rule);
+    border-top: 1px solid var(--color-rule);
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .case-card {
+    aspect-ratio: 271.8 / 163.08;
+    border-bottom: 1px solid var(--color-rule);
+    border-right: 1px solid var(--color-rule);
+    display: grid;
+    gap: 10px;
+    grid-template-rows: auto 1fr auto;
+    padding: 16px;
+    position: relative;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .case-meta {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    line-height: 15px;
+  }
+
+  .case-title {
+    align-self: center;
+    justify-self: center;
+    margin: 0;
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  .case-title.serif {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    font-style: italic;
+    letter-spacing: -0.44px;
+  }
+
+  .case-title.serif-up {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    letter-spacing: -0.44px;
+    text-transform: uppercase;
+  }
+
+  .case-title.sans,
+  .case-title.sans-up {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.44px;
+    line-height: 33px;
+  }
+
+  .case-title.sans-up,
+  .case-title.mono-up {
+    text-transform: uppercase;
+  }
+
+  .case-title.mono,
+  .case-title.mono-up {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.44px;
+    line-height: 24.2px;
+  }
+
+  .case-title.serif-script {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-style: italic;
+    letter-spacing: -0.44px;
+    line-height: 33px;
+  }
+
+  .case-foot {
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .case-link {
+    color: var(--color-accent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .marquee {
+    align-items: center;
+    border-bottom: 1px solid var(--color-rule);
+    border-top: 1px solid var(--color-rule);
+    display: flex;
+    overflow: hidden;
+    padding: 24px 0;
+  }
+
+  .marquee-track {
+    animation: marquee-scroll 26s linear infinite;
+    display: inline-flex;
+    gap: 60px;
+    min-width: max-content;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  .marquee-segment {
+    display: inline-flex;
+    gap: 60px;
+    font-family: var(--font-serif);
+    font-size: 52px;
+    font-style: italic;
+    line-height: 59.8px;
+    flex-shrink: 0;
+  }
+
+  .marquee-part {
+    align-items: center;
+    display: inline-flex;
+    gap: 16px;
+  }
+
+  .marquee-sep {
+    color: var(--color-accent);
+  }
+
+  @media (min-width: 768px) {
+    .logo-head {
+      align-items: end;
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .case-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .marquee-track {
+      gap: 72px;
+    }
+
+    .marquee-segment {
+      gap: 72px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .case-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .case-card:hover {
+      background: var(--color-ink);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: var(--color-cream);
+    }
+
+    .case-card:hover .case-meta {
+      color: #847f74;
+    }
+
+    .case-card:hover .case-link {
+      opacity: 1;
+    }
+
+    .marquee {
+      padding: 29px 0;
+    }
+
+    .marquee-track {
+      gap: 60px;
+    }
+
+    .marquee-segment {
+      gap: 60px;
+      font-size: 60px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>

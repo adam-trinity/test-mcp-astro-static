@@ -1,0 +1,96 @@
+---
+const links = ["Work", "Studio", "Thinking", "Contact"];
+---
+
+<header class="nav-wrap page-shell">
+  <div class="content-shell nav-shell">
+    <a href="#" class="brand">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-text">Halflight</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        {links.map((item) => (
+          <li><a href="#">{item}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <a href="#" class="pill-link booking-pill">
+      <span class="pill-dot" aria-hidden="true"></span>
+      <span>Booking Q3 - 2026</span>
+    </a>
+  </div>
+</header>
+
+<style>
+  .nav-wrap {
+    background: var(--color-cream);
+    border-bottom: 1px solid var(--color-rule);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .nav-shell {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    min-height: 83px;
+  }
+
+  .brand {
+    align-items: center;
+    display: inline-flex;
+    gap: 10px;
+  }
+
+  .brand-dot {
+    background: var(--color-accent);
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+  }
+
+  .brand-text {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 30px;
+  }
+
+  .nav-links {
+    display: none;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+
+  .booking-pill {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 767px) {
+    .booking-pill {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+    }
+  }
+</style>
